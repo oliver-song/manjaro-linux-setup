@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 启动scrcpy前设置qq输入法
+# 现在微信输入法已经支持外接键盘输入
 adb shell ime set com.tencent.qqpinyin/.QQPYInputMethodService
 
 # 启动scrcpy
