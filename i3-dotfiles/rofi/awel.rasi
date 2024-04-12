@@ -12,7 +12,7 @@ configuration {
   show-icons: true;
   icon-theme: "WhiteSur";
   location: 0;
-  fake-transparency: true;
+  fake-transparency: false;
   hide-scrollbar: true;
   bw: 0;
   terminal: "termite";
@@ -39,6 +39,7 @@ window {
   padding: 30;
   width: 30%;
   height: 50%;
+  transparency: "real";
 }
 
 mainbox {
@@ -101,3 +102,4 @@ entry {
   font: "SF Pro Display 12";
   margin: 0 10em;
 }
+
