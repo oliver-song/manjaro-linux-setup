@@ -156,8 +156,9 @@ mode "resize" {
 ######################################
 
 # start a terminal
-# bindsym $mod+Return exec --no-startup-id xfce4-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
+# bindsym $mod+Return exec --no-startup-id ghostty
+# bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -187,9 +188,11 @@ bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint-2
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight +10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -10 && notify-send "Brightness - $(xbacklight -get | cut -d '.' -f 1)%"
 # Backlight setting using dunst osc
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
+#bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_up
+#bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/scripts/volume_brightness.sh brightness_down
 
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -330,18 +333,21 @@ set $ws10 "10"
 #}
 
 # automatic set focus new window if it opens on another workspace than the current:
-for_window [class=Xfce4-terminal] focus
-for_window [class=(?i)firefox] focus
-for_window [class=Thunar] focus
-for_window [class=Thunderbird] focus
-for_window [class=TelegramDesktop] focus
+#for_window [class=Xfce4-terminal] focus
+#for_window [class=(?i)firefox] focus
+#for_window [class=Thunar] focus
+#for_window [class=Thunderbird] focus
+#for_window [class=TelegramDesktop] focus
 
 # open specific applications in floating mode
 for_window [class="scrcpy"] floating enable
+# for_window [class="obsidian"] floating enable
 for_window [class="wechat"] floating enable
 for_window [class="dida"] floating enable
 for_window [class="wemeetapp"] floating enable
-for_window [class="Thunar"] floating enable
+#for_window [class="zed"] floating enable
+# for_window [class="Notion"] floating enable
+##############
 ##############
 # compositor #
 ##############
@@ -371,6 +377,7 @@ for_window [class="Thunar"] floating enable
 # for custom config:
 # exec_always --no-startup-id picom --config  ~/.config/picom.conf
 exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id xfce4-power-manager
 #############################################
 # autostart applications/services on login: #
 #############################################
@@ -390,7 +397,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id sh /usr/share/endeavouros/scripts/welcome --startdelay=3 
 
 # num lock activated
-#exec --no-startup-id numlockx on
+# exec --no-startup-id numlockx on
 
 # configure multiple keyboard layouts and hotkey to switch (Alt+CAPSLOCK in this example)
 #exec --no-startup-id setxkbmap -layout 'us,sk' -variant altgr-intl,qwerty -option 'grp:alt_caps_toggle'
@@ -460,12 +467,17 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec --no-startup-id xfce4-clipman
 
 # 设置输入法环境变量
-exec --no-startup-id export GTK_IM_MODULE=fcitx5
-exec --no-startup-id export QT_IM_MODULE=fcitx5
-exec --no-startup-id export XMODIFIERS=@im=fcitx5
+#exec --no-startup-id export GTK_IM_MODULE=fcitx5
+#exec --no-startup-id export QT_IM_MODULE=fcitx5
+#exec --no-startup-id export XMODIFIERS=@im=fcitx5
 # 启动fcitx
-exec --no-startup-id fcitx5
+#exec --no-startup-id fcitx5
 
+exec --no-startup-id export GTK_IM_MODULE=ibus
+exec --no-startup-id export QT_IM_MODULE=ibus
+exec --no-startup-id export XMODIFIERS=@im=ibus
+# start ibus
+exec --no-startup-id ibus-daemon -drx
 
 ##################
 # floating rules #
@@ -485,8 +497,8 @@ for_window [class="Bluetooth-sendto" instance="bluetooth-sendto"] floating enabl
 for_window [class="Pamac-manager"] floating enable
 for_window [window_role="About"] floating enable
 for_window [class="copyq"] floating enable
-for_window [class="图片查看"] floating enable
-for_window [title="flomo"] floating enable
+for_window [title="图片查看"] floating enable
+# for_window [title="flomo"] floating enable
 for_window [class="com.alibabainc.dingtalk"] floating enable
 # set border of floating window
 for_window [class="urxvt"] border pixel 1
