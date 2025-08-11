@@ -2,9 +2,9 @@
 
 echo "Installing the following essential packages:"
 
-yaypkgs="clipit dida365 wechat-universal-bwrap ibus-rime librime apple-fonts google-chrome manjaro-asian-input-support-fcitx5 fcitx5-chinese-addons fcitx5-pinyin-zhwiki fcitx5-pinyin-moegirl flameshot peek pinta dingtalk wps-office-cn wps-office-mui-zh-cn wps-office-fonts ttf-wps-fonts wemeet-bin baidunetdisk-bin ttf-font-awesome sunloginclient scrcpy"
+yaypkgs="clipit dida365 wechat-universal-bwrap apple-fonts google-chrome flameshot peek pinta dingtalk wps-office-cn wps-office-mui-zh-cn wps-office-fonts ttf-wps-fonts wemeet-bin baidunetdisk-bin ttf-font-awesome sunloginclient scrcpy"
 
-pacmanpkgs="picom vlc dbeaver tree python-pip neovim neofetch screenkey figlet iputils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk ttf-hack clash-verge-rev-bin"
+pacmanpkgs="picom vlc dbeaver tree python-pip neovim neofetch screenkey figlet iputils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk ttf-hack clash-verge-rev-bin fcitx5-rime rime-ice-git fcitx5-configtool"
 
 echo $yaypkgs
 

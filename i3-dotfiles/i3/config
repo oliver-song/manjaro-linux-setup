@@ -467,17 +467,17 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #exec --no-startup-id xfce4-clipman
 
 # 设置输入法环境变量
-#exec --no-startup-id export GTK_IM_MODULE=fcitx5
-#exec --no-startup-id export QT_IM_MODULE=fcitx5
-#exec --no-startup-id export XMODIFIERS=@im=fcitx5
+exec --no-startup-id export GTK_IM_MODULE=fcitx5
+exec --no-startup-id export QT_IM_MODULE=fcitx5
+exec --no-startup-id export XMODIFIERS=@im=fcitx5
 # 启动fcitx
-#exec --no-startup-id fcitx5
+exec --no-startup-id fcitx5
 
-exec --no-startup-id export GTK_IM_MODULE=ibus
-exec --no-startup-id export QT_IM_MODULE=ibus
-exec --no-startup-id export XMODIFIERS=@im=ibus
+#exec --no-startup-id export GTK_IM_MODULE=ibus
+#exec --no-startup-id export QT_IM_MODULE=ibus
+#exec --no-startup-id export XMODIFIERS=@im=ibus
 # start ibus
-exec --no-startup-id ibus-daemon -drx
+#exec --no-startup-id ibus-daemon -drx
 
 ##################
 # floating rules #
